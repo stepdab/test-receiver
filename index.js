@@ -1,9 +1,9 @@
 import express from 'express'
-import {json} from 'body-parser'
+import bodyParser from 'body-parser'
 
 let server = express()
 
-server.use('/', json({limit: '3mb'}))
+server.use('/', bodyParser.json({limit: '3mb'}))
 
 server.get('/', (req,res) => {
     res.send({success: true, result: Math.random()})
